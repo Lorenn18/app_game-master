@@ -3,7 +3,7 @@ session_start();
 include("helpers/functions.php");
 // 1-connexion a ma BDD
 // include PDO pour la connexion BDD
-require_once("helpers/pdo.php");
+require_once("models/database.php");
 // requette delete
 require_once("sql/delete-sql.php");
 

@@ -8,3 +8,12 @@ $query->execute();
 // 4- on stock le resultat ds une variable
 $games = $query->fetchAll();
 // debug_array($games)
+
+/**
+ * This function return all games
+ * 
+ *  @return array
+ */
+function getAllGames(){
+
+}

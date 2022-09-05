@@ -6,7 +6,7 @@ $title = "Add Game"; //title for current page
 include('partials/_header.php');
 include("helpers/functions.php");
 // include PDO pour la connexion BDD
-require_once("helpers/pdo.php");
+require_once("models/database.php");
 // debug_array($_GET)
 
 // traitement du formulaire
