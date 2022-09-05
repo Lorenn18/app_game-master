@@ -96,3 +96,26 @@ function delete(): void
     $_SESSION["success"] = "Le jeu est bien supprimer.";
     header("location:index.php");
 }
+
+function create($error): void
+{
+    require_once("utils/secure-form/include.php");
+    if (count($error) == 0) {
+        $pdo = getPDO();
+        $sql = "INSERT INTO jeux(name, price, genre, note, plateforms, description, PEGI, created_at, url_img) VALUES(:name, :price, :genre, :note, :plateforms, :description, :PEGI, NOW(), :url_img)";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':name', $name, PDO::PARAM_STR);
+        $query->bindValue(':price', $price, PDO::PARAM_STMT);
+        $query->bindValue(':note', $note, PDO::PARAM_STMT);
+        $query->bindValue(':description', $description, PDO::PARAM_STR);
+        $query->bindValue(':genre', implode("|", $genre_clear), PDO::PARAM_STR);
+        $query->bindValue(':plateforms', implode("|", $plateforms_clear), PDO::PARAM_STR);
+        $query->bindValue(':PEGI', $PEGI, PDO::PARAM_STR);
+        $query->bindValue(':url_img', $url_img, PDO::PARAM_STR);
+        $query->execute();
+        // 5- redirect
+        $_SESSION["success"] = "le jeu a bien été ajouté";
+        header("Location: index.php");
+        die;
+    }
+}

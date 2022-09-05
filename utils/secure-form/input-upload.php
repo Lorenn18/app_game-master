@@ -14,7 +14,7 @@ if ($files_size <= $sizeMax) {
     $allowed_extensions = ["jpg", "jpeg", "png"];
     if (in_array($extension, $allowed_extensions)) {
         $new_img_name = uniqid('IMG-', true) . "." . $extension;
-        $img_upload_path = 'uploads/' . $new_img_name;
+        $img_upload_path = 'public/uploads/' . $new_img_name;
         move_uploaded_file($files_tmp, $img_upload_path);
     } else {
         $error["url_img"] = "<span class='text-red-500'>Type de fichier incorect (autorisé : jpg, jpeg ou png)</span>";

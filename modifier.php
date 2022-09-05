@@ -10,6 +10,7 @@ require_once("models/database.php");
 
 //1-verifie id existant et que c'est un int
 if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
+    $pdo = getPDO();
     // 2- je nettoie mon id contre xss
     $id = clear_xss($_GET['id']);
     // 3- requette (query in english) vers BDD
@@ -43,7 +44,7 @@ $success = false;
 if (!empty($_POST["submited"])) {
     //2-je fais les failles xss
     //3-validation de chaque input
-    require_once("validation-formulaire/include.php");
+    require_once("utils/secure-form/include.php");
 
     // //4- if no error
     if (count($error) == 0) {
