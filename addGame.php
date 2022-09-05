@@ -3,8 +3,8 @@
 // start session
 session_start();
 $title = "Add Game"; //title for current page
-include('partials/_header.php');
-include("helpers/functions.php");
+// include('view/partials/_header.php');
+include("utils/helpers/functions.php");
 // include PDO pour la connexion BDD
 require_once("models/database.php");
 // debug_array($_GET)
@@ -22,7 +22,7 @@ $success = false;
 if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0) {
     //2-je fais les failles xss
     //3-validation de chaque input
-    require_once("validation-formulaire/include.php");
+    require_once("utils/secure-form/include.php");
     debug_array($error);
     // //4- if no error
     if (count($error) == 0) {
@@ -36,7 +36,7 @@ if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"
     <a href="index.php" class="text-blue-500 text-sm">
         <- retour </a>
             <?php $main_title = "Ajouter un jeu";
-            include("partials/_h1.php")
+            include("view/partials/_h1.php")
             ?>
             <form action="" method="POST" class="grid place-items-center bg-gray-100 mx-96 py-10 my-16 gap-y-4 rounded-xl" enctype="multipart/form-data">
                 <!--input name  -->
@@ -204,6 +204,3 @@ if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"
                 </div>
             </form>
 </section>
-
-<!-- footer -->
-<?php include('partials/_footer.php') ?>

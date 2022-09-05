@@ -19,7 +19,7 @@
                 </div>
                 <div class="pt-10">
                     <a href="modifier.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a>
-                    <?php include("partials/_modal.php") ?>
+                    <?php include("view/partials/_modal.php") ?>
                 </div>
             </div>
 </div>

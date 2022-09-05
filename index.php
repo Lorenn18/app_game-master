@@ -3,8 +3,8 @@
 /**
  * This file show the home page 
  */
-// session_start()
+session_start();
 require_once("models/database.php");
-$games = getAllgames();
+$games = getAllGames();
 
 require("view/homePage.php");

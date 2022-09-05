@@ -1,5 +1,5 @@
 <?php
-include("helpers/functions.php");
+include("utils/helpers/functions.php");
 /**
  * get connexion with database
  * @return PDO
@@ -80,11 +80,19 @@ function getGame(): array
 };
 
 
+/**
+ * This function delete an item
+ * @return void
+ */
 
-
-function getName(string $name)
+function delete(): void
 {
-    return "David";
-};
-
-getName("David");
+    $pdo = getPDO();
+    $id = getId();
+    $sql = "DELETE FROM jeux WHERE id=?";
+    $query = $pdo->prepare($sql);
+    $query->execute([$id]);
+    // redirect
+    $_SESSION["success"] = "Le jeu est bien supprimer.";
+    header("location:index.php");
+}

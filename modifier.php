@@ -3,8 +3,7 @@
 // start session
 session_start();
 $title = "modifier"; //title for current page
-include('partials/_header.php');
-include("helpers/functions.php");
+// include("utils/helpers/functions.php");
 // include PDO pour la connexion BDD
 require_once("models/database.php");
 // debug_array($_GET)
@@ -58,7 +57,7 @@ if (!empty($_POST["submited"])) {
     <a href="index.php" class="text-blue-500 text-sm">
         <- retour </a>
             <?php $main_title = "Modifier le jeu";
-            include("partials/_h1.php")
+            include("view/partials/_h1.php")
             ?>
             <form action="" method="POST" class="grid place-items-center bg-gray-100 mx-96 py-10 my-16 gap-y-4 rounded-xl">
                 <!--input name  -->
