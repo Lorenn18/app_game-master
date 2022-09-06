@@ -2,7 +2,7 @@
     <!-- head content -->
     <div class="wrap_content-head text-center">
         <?php $main_title = "App Game";
-        include("view/partials/_h1.php")
+        include("_h1.php")
         ?>
         <p class="pt-5">L'app qui repertorie vos jeux</p>
 
@@ -11,7 +11,7 @@
             <a href="addGame.php" class="btn bg-blue-500">Ajouter un jeu</a>
         </div>
 
-        <?php require_once("view/partials/_alert.php") ?>
+        <?php require_once("_alert.php") ?>
 
     </div>
     <!-- table-->
@@ -46,10 +46,10 @@
                             <td><?= $game['PEGI'] ?></td>
                             <td>
                                 <a href="show.php?id=<?= $game['id'] ?>&name=<?= $game['name'] ?>">
-                                    <img src="img/oeil.png" alt="eye" class="w-4">
+                                    <img src="public/img/oeil.png" alt="eye" class="w-4">
                                 </a>
                             </td>
-                            <td><a href="modifier.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a></td>
+                            <td><a href="update.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a></td>
                             <td><?php include("view/partials/_modal.php") ?></td>
                         </tr>
                     <?php endforeach ?>

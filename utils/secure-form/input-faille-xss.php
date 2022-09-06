@@ -19,4 +19,9 @@ foreach ($plateforms as $plateform) {
 };
 
 $PEGI = !empty($_POST["PEGI"]) ? clear_xss($_POST["PEGI"]) : [];
-$url_img = $img_upload_path;
+// $url_img = $img_upload_path;
+if (!empty($img_upload_path)) {
+    $url_img = $img_upload_path;
+} else {
+    $error["url_img"] = "<span class=text-red-500>*Choisissez un fichier</span>";
+};

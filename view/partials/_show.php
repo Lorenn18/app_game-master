@@ -18,8 +18,8 @@
                     <p>Prix : <?= $game["price"] ?>€</p>
                 </div>
                 <div class="pt-10">
-                    <a href="modifier.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a>
-                    <?php include("view/partials/_modal.php") ?>
+                    <a href="update.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a>
+                    <?php include("_modal.php") ?>
                 </div>
             </div>
 </div>

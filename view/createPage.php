@@ -1,8 +1,8 @@
 <?php
 
-$title = "Accueil";
+$title = "Jeux";
 ob_start();
-require("view/partials/_home.php");
+require("partials/_create.php");
 
 $content = ob_get_clean();
 require("layout.php");
